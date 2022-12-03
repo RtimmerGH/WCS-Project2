@@ -50,9 +50,21 @@
   color: cadetblue;
   font-weight: bold;
 }
+.vulnerable {
+  font-weight: Bold;
+  color: rgb(248, 94, 94);
+}
+.weak {
+  font-weight: Bold;
+  color: rgb(248, 94, 94);
+}
+.poison {
+  font-weight: Bold;
+  color: rgb(248, 94, 94);
+}
 .distribDown {
   font-weight: Bold;
-  color: red;
+  color: rgb(248, 94, 94);
 }
 .playerLifeChange {
   color: greenyellow;
@@ -71,5 +83,8 @@
 @media screen and (max-width: 1024px) {
   .player-stat {
     top: 2%;
+  }
+  .player-Name {
+    display:none;
   }
 }

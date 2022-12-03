@@ -74,7 +74,7 @@
   text-align: center;
   font-size: 0.8rem;
   font-weight: 900;
-  line-height: calc(1vw + 1vh);
+  line-height: 0.8rem;
 }
 
 .cardPicContainer {
@@ -127,11 +127,11 @@
 
 @media screen and (max-width: 1135px) {
   .skillsCard p {
-    font-size: 0.6rem;
+    font-size: 0.5rem;
   }
   .champCardName h3 {
     font-size: 0.6rem;
-    line-height: 12px;
+    line-height: 0.6rem;
     font-weight: 500;
   }
   .champCard {
@@ -144,11 +144,11 @@
 
 @media screen and (max-width: 945px) {
   .skillsCard p {
-    font-size: 0.6rem;
+    font-size: 0.5rem;
   }
   .champCardName h3 {
     font-size: 0.6rem;
-    line-height: 12px;
+    line-height: 0.6rem;
     font-weight: 500;
   }
   .champCard {
@@ -161,11 +161,11 @@
 
 @media screen and (max-width: 750px) {
   .skillsCard p {
-    font-size: 0.6rem;
+    font-size: 0.5rem;
   }
   .champCardName h3 {
     font-size: 0.6rem;
-    line-height: 12px;
+    line-height: 0.6rem;
     font-weight: 500;
   }
   .champCard {
