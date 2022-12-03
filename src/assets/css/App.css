@@ -51,7 +51,8 @@
   --heading-color: #292922;
   /* img */
   --logo-riot: url("https://upload.wikimedia.org/wikipedia/fr/7/7c/Riot_Games_Logo.png");
-  --logo-central: url("./src/assets/img/HomeMenu/bouton_central_light.svg");
+  /*--logo-central: url("./src/assets/img/HomeMenu/bouton_central_light.svg");*/
+  --logo-central: url("../img/HomeMenu/bouton_central_light.svg");
 }
 
 * {
