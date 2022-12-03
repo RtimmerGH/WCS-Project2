@@ -19,7 +19,7 @@ const pic = () => {
     // met les premiere keys de json dans un array
     const bgm = Object.keys(splashs[0]);
     // Change le style background
-    document.body.style.background = `no-repeat fixed url(http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${
+    document.body.style.background = `no-repeat fixed url(https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${
       bgm[Math.floor(Math.random() * bgm.length)]
     }_0.jpg) 50% 50% / cover #ffffff`;
   });
