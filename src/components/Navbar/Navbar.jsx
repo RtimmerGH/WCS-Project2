@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../../assets/css/Navbar/Navbar.css";
 import { Link } from "react-router-dom";
-import poro from "../../assets/img/Navbar/poro.png";
+import poro from "/assets/img/Navbar/poro.png";
 
 // Gestion du menu burger avec bouton //
 function Navbar() {

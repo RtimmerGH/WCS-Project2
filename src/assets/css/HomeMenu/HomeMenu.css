@@ -72,7 +72,8 @@ button {
 }
 
 .Home-game div {
-  background-image: url("./src/assets/img/HomeMenu/milieu.png");
+  /*background-image: url("./src/assets/img/HomeMenu/milieu.png");*/
+  background-image: url("../../img/HomeMenu/milieu.png");
 }
 
 .Home-riot {
@@ -83,7 +84,8 @@ button {
 }
 
 .Home-riot div {
-  background-image: url("./src/assets/img/HomeMenu/droite.png");
+  /*background-image: url("./src/assets/img/HomeMenu/droite.png");*/
+  background-image: url("../../img/HomeMenu/droite.png");
 }
 
 .Home-lib {
@@ -94,7 +96,8 @@ button {
 }
 
 .Home-lib div {
-  background-image: url("./src/assets/img/HomeMenu/gauche.png");
+  /*background-image: url("./src/assets/img/HomeMenu/gauche.png");*/
+  background-image: url("../../img/HomeMenu/gauche.png");
 }
 
 .Home-button {
