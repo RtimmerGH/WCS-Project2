@@ -5,11 +5,12 @@
   bottom: 30vh;
 }
 .drag-drop-zone {
-  top: 0;
+  top: 24%;
+  left:23%;
   position: fixed;
-  margin: calc(39vh - 99px) 19vw;
+  /*margin: calc(39vh - 99px) 19vw;*/
   width: 50vw;
-  height: 350px;
+  height: 40vh;
   background-size: contain;
   background-repeat: no-repeat;
   background-color: transparent;
@@ -60,8 +61,6 @@
   gap: 1vw;
 }
 
-.Card-Zone {
-}
 
 /* /// DrawPile et cimetery img */
 .infodumpcard {
@@ -85,7 +84,7 @@
   align-items: center;
   align-content: flex-end;
   flex-wrap: nowrap;
-  margin: 2vw;
+  margin: 1vw;
 }
 
 .drawpile img,

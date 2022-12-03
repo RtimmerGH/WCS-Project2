@@ -30,6 +30,8 @@ export default function ModalDisplay({
   setPrevPlayerLife,
   setPrevEnemyLife,
   setItem,
+  modalRulesOpen,
+  setModalRulesOpen,
 }) {
   const [startGame, setStartGame] = useState(0);
   const deckDepart = [];
@@ -38,7 +40,12 @@ export default function ModalDisplay({
     <div className="Modale-wrapper">
       {lvlGame === 0 &&
         (!startGame ? (
-          <ModalStart setStartGame={setStartGame} />
+          <ModalStart
+            setStartGame={setStartGame}
+            lvlGame={lvlGame}
+            modalRulesOpen={modalRulesOpen}
+            setModalRulesOpen={setModalRulesOpen}
+          />
         ) : (
           <ModalDraft
             setDeckJeu={setDeckJeu}
@@ -333,6 +340,8 @@ ModalDisplay.propTypes = {
   setPrevPlayerLife: PropTypes.func,
   setPrevEnemyLife: PropTypes.func,
   setItem: PropTypes.func,
+  modalRulesOpen: PropTypes.bool,
+  setModalRulesOpen: PropTypes.func,
 };
 
 ModalDisplay.defaultProps = {
@@ -563,4 +572,6 @@ ModalDisplay.defaultProps = {
   setPrevPlayerLife: () => {},
   setPrevEnemyLife: () => {},
   setItem: () => {},
+  modalRulesOpen: true,
+  setModalRulesOpen: () => {},
 };

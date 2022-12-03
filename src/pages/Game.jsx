@@ -6,6 +6,7 @@ import Board from "../components/Game/Board";
 import "../assets/css/Game.css";
 
 export default function Game() {
+  const [modalRulesOpen, setModalRulesOpen] = useState(false);
   const [render, setRender] = useState(false);
   const [deckJeu, setDeckJeu] = useState([]);
   const [lvlGame, setLvlGame] = useState(0);
@@ -477,7 +478,7 @@ export default function Game() {
       setStartPlayerTurn(true);
     }
     // fin changes
-    if (enemyActionsResolution) {
+    if (enemyActionsResolution && enemyStats.currentLife > 0) {
       delayStartEnemyAction();
     }
   }, [enemyActionsResolution]);
@@ -536,6 +537,8 @@ export default function Game() {
           setPrevPlayerLife={setPrevPlayerLife}
           setPrevEnemyLife={setPrevEnemyLife}
           setItem={setItem}
+          modalRulesOpen={modalRulesOpen}
+          setModalRulesOpen={setModalRulesOpen}
         />
       )}
       {(lvlGame === 1 || lvlGame === 3 || lvlGame === 5) && deckJeu && (
@@ -552,6 +555,8 @@ export default function Game() {
             lvlGame={lvlGame}
             enemyActionsResolution={enemyActionsResolution}
             endPlayerTurn={endPlayerTurn}
+            modalRulesOpen={modalRulesOpen}
+            setModalRulesOpen={setModalRulesOpen}
           />
           <Deck
             champions={deckJeu}

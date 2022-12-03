@@ -235,6 +235,7 @@ function GameCard({
               (playerCopy.debuff.weak > 0 ? 0.5 : 1)
           );
           damage -= enemyCopy.resistMag;
+          if (damage < 1) damage = 0;
           if (enemyCopy.tempBuff.block > 0) {
             if (damage > enemyCopy.tempBuff.block) {
               damage -= enemyCopy.tempBuff.block;
@@ -257,6 +258,7 @@ function GameCard({
               (playerCopy.debuff.weak > 0 ? 0.5 : 1)
           );
           damage -= enemyCopy.resistPhys;
+          if (damage < 1) damage = 0;
           if (enemyCopy.tempBuff.block > 0) {
             if (damage > enemyCopy.tempBuff.block) {
               damage -= enemyCopy.tempBuff.block;
