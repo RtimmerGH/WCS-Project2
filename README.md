@@ -8,3 +8,5 @@ We chose to develop the project with React JS and CSS Vanilla.
 For the API we used the League of Legends API DATA DRAGON to get info about the game champions.
 
 The main feature of the application is a card game inspired from Slay the Spire in the League of Legends universe.
+
+https://slay-the-legends.netlify.app/
