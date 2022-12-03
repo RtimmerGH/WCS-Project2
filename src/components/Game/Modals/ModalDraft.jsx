@@ -293,11 +293,11 @@ export default function ModalDraft({
                     width: `7vw`,
                     position: `relative`,
                   }}
+                  key={item.champion.id}
                 >
                   <img
                     className="Modale-deck"
-                    key={item.champion.id}
-                    src={`http://ddragon.leagueoflegends.com/cdn/12.22.1/img/champion/${item.champion.id}.png`}
+                    src={`https://ddragon.leagueoflegends.com/cdn/12.22.1/img/champion/${item.champion.id}.png`}
                     alt="champ img"
                   />{" "}
                   <p className="mana-text">

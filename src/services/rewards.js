@@ -1,7 +1,7 @@
 const rewards = [
   {
     id: 1,
-    pic: "http://ddragon.leagueoflegends.com/cdn/12.22.1/img/item/1038.png",
+    pic: "https://ddragon.leagueoflegends.com/cdn/12.22.1/img/item/1038.png",
     firstBuff: "magicBuff",
     value1: 5,
     secondBuff: "physBuff",
@@ -11,7 +11,7 @@ const rewards = [
   },
   {
     id: 2,
-    pic: "http://ddragon.leagueoflegends.com/cdn/12.22.1/img/item/1057.png",
+    pic: "https://ddragon.leagueoflegends.com/cdn/12.22.1/img/item/1057.png",
     firstBuff: "magicBuff",
     value1: 5,
     secondBuff: "defenseBuff",
@@ -21,7 +21,7 @@ const rewards = [
   },
   {
     id: 3,
-    pic: "http://ddragon.leagueoflegends.com/cdn/12.22.1/img/item/3001.png",
+    pic: "https://ddragon.leagueoflegends.com/cdn/12.22.1/img/item/3001.png",
     firstBuff: "magicBuff",
     value1: 5,
     secondBuff: "poisonBuff",
@@ -31,7 +31,7 @@ const rewards = [
   },
   {
     id: 4,
-    pic: "http://ddragon.leagueoflegends.com/cdn/12.22.1/img/item/2003.png",
+    pic: "https://ddragon.leagueoflegends.com/cdn/12.22.1/img/item/2003.png",
     firstBuff: "magicBuff",
     value1: 5,
     secondBuff: "healBuff",
@@ -41,7 +41,7 @@ const rewards = [
   },
   {
     id: 5,
-    pic: "http://ddragon.leagueoflegends.com/cdn/12.22.1/img/item/3003.png",
+    pic: "https://ddragon.leagueoflegends.com/cdn/12.22.1/img/item/3003.png",
     firstBuff: "magicBuff",
     value1: 5,
     secondBuff: "startDistrib",
@@ -51,7 +51,7 @@ const rewards = [
   },
   {
     id: 6,
-    pic: "http://ddragon.leagueoflegends.com/cdn/12.22.1/img/item/1026.png",
+    pic: "https://ddragon.leagueoflegends.com/cdn/12.22.1/img/item/1026.png",
     firstBuff: "magicBuff",
     value1: 5,
     secondBuff: "currentLife",
@@ -62,7 +62,7 @@ const rewards = [
   },
   {
     id: 7,
-    pic: "http://ddragon.leagueoflegends.com/cdn/12.22.1/img/item/1031.png",
+    pic: "https://ddragon.leagueoflegends.com/cdn/12.22.1/img/item/1031.png",
     firstBuff: "physBuff",
     value1: 5,
     secondBuff: "defenseBuff",
@@ -72,7 +72,7 @@ const rewards = [
   },
   {
     id: 8,
-    pic: "http://ddragon.leagueoflegends.com/cdn/12.22.1/img/item/3011.png",
+    pic: "https://ddragon.leagueoflegends.com/cdn/12.22.1/img/item/3011.png",
     firstBuff: "physBuff",
     value1: 5,
     secondBuff: "poisonBuff",
@@ -82,7 +82,7 @@ const rewards = [
   },
   {
     id: 9,
-    pic: "http://ddragon.leagueoflegends.com/cdn/12.22.1/img/item/1053.png",
+    pic: "https://ddragon.leagueoflegends.com/cdn/12.22.1/img/item/1053.png",
     firstBuff: "physBuff",
     value1: 5,
     secondBuff: "healBuff",
@@ -92,7 +92,7 @@ const rewards = [
   },
   {
     id: 10,
-    pic: "http://ddragon.leagueoflegends.com/cdn/12.22.1/img/item/3004.png",
+    pic: "https://ddragon.leagueoflegends.com/cdn/12.22.1/img/item/3004.png",
     firstBuff: "physBuff",
     value1: 5,
     secondBuff: "startDistrib",
@@ -102,7 +102,7 @@ const rewards = [
   },
   {
     id: 11,
-    pic: "http://ddragon.leagueoflegends.com/cdn/12.22.1/img/item/3072.png",
+    pic: "https://ddragon.leagueoflegends.com/cdn/12.22.1/img/item/3072.png",
     firstBuff: "physBuff",
     value1: 5,
     secondBuff: "currentLife",
@@ -112,7 +112,7 @@ const rewards = [
   },
   {
     id: 12,
-    pic: "http://ddragon.leagueoflegends.com/cdn/12.22.1/img/item/3068.png",
+    pic: "https://ddragon.leagueoflegends.com/cdn/12.22.1/img/item/3068.png",
     firstBuff: "defenseBuff",
     value1: 5,
     secondBuff: "poisonBuff",
@@ -122,7 +122,7 @@ const rewards = [
   },
   {
     id: 13,
-    pic: "http://ddragon.leagueoflegends.com/cdn/12.22.1/img/item/3053.png",
+    pic: "https://ddragon.leagueoflegends.com/cdn/12.22.1/img/item/3053.png",
     firstBuff: "defenseBuff",
     value1: 5,
     secondBuff: "healBuff",
@@ -132,7 +132,7 @@ const rewards = [
   },
   {
     id: 14,
-    pic: "http://ddragon.leagueoflegends.com/cdn/12.22.1/img/item/2138.png",
+    pic: "https://ddragon.leagueoflegends.com/cdn/12.22.1/img/item/2138.png",
     firstBuff: "defenseBuff",
     value1: 5,
     secondBuff: "startDistrib",
@@ -142,7 +142,7 @@ const rewards = [
   },
   {
     id: 15,
-    pic: "http://ddragon.leagueoflegends.com/cdn/12.22.1/img/item/2051.png",
+    pic: "https://ddragon.leagueoflegends.com/cdn/12.22.1/img/item/2051.png",
     firstBuff: "defenseBuff",
     value1: 5,
     secondBuff: "currentLife",
@@ -152,7 +152,7 @@ const rewards = [
   },
   {
     id: 16,
-    pic: "http://ddragon.leagueoflegends.com/cdn/12.22.1/img/item/4632.png",
+    pic: "https://ddragon.leagueoflegends.com/cdn/12.22.1/img/item/4632.png",
     firstBuff: "poisonBuff",
     value1: 3,
     secondBuff: "healBuff",
@@ -162,7 +162,7 @@ const rewards = [
   },
   {
     id: 17,
-    pic: "http://ddragon.leagueoflegends.com/cdn/12.22.1/img/item/4635.png",
+    pic: "https://ddragon.leagueoflegends.com/cdn/12.22.1/img/item/4635.png",
     firstBuff: "poisonBuff",
     value1: 3,
     secondBuff: "startDistrib",
@@ -172,7 +172,7 @@ const rewards = [
   },
   {
     id: 18,
-    pic: "http://ddragon.leagueoflegends.com/cdn/12.22.1/img/item/2033.png",
+    pic: "https://ddragon.leagueoflegends.com/cdn/12.22.1/img/item/2033.png",
     firstBuff: "poisonBuff",
     value1: 3,
     secondBuff: "currentLife",
@@ -182,7 +182,7 @@ const rewards = [
   },
   {
     id: 19,
-    pic: "http://ddragon.leagueoflegends.com/cdn/12.22.1/img/item/3041.png",
+    pic: "https://ddragon.leagueoflegends.com/cdn/12.22.1/img/item/3041.png",
     firstBuff: "healBuff",
     value1: 5,
     secondBuff: "startDistrib",
@@ -192,7 +192,7 @@ const rewards = [
   },
   {
     id: 20,
-    pic: "http://ddragon.leagueoflegends.com/cdn/12.22.1/img/item/1001.png",
+    pic: "https://ddragon.leagueoflegends.com/cdn/12.22.1/img/item/1001.png",
     firstBuff: "healBuff",
     value1: 5,
     secondBuff: "currentLife",
@@ -202,7 +202,7 @@ const rewards = [
   },
   {
     id: 21,
-    pic: "http://ddragon.leagueoflegends.com/cdn/12.22.1/img/item/2419.png",
+    pic: "https://ddragon.leagueoflegends.com/cdn/12.22.1/img/item/2419.png",
     firstBuff: "startDistrib",
     value1: 1,
     secondBuff: "currentLife",

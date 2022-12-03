@@ -33,7 +33,7 @@ function ModalLib({ setOpenModal, modalChamp }) {
       <div
         className="modalLibContainer"
         style={{
-          backgroundImage: `url(http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${modalChamp}_0.jpg)`,
+          backgroundImage: `url(https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${modalChamp}_0.jpg)`,
         }}
         onClick={(e) => {
           e.stopPropagation();
