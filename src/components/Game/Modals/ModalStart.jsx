@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
 import PropTypes from "prop-types";
 import "../../../assets/css/Game/ModalDraft.css";
 import ModalRules from "./ModalRules";
 
-export default function ModalStart({ setStartGame }) {
-  const [modalRulesOpen, setModalRulesOpen] = useState(false);
+export default function ModalStart({
+  setStartGame,
+  lvlGame,
+  modalRulesOpen,
+  setModalRulesOpen,
+}) {
   return (
     <div className="Modale-start">
       <button
@@ -27,14 +30,22 @@ export default function ModalStart({ setStartGame }) {
       >
         REGLES DU JEU
       </button>
-      {modalRulesOpen && <ModalRules setModalRulesOpen={setModalRulesOpen} />}
+      {modalRulesOpen && (
+        <ModalRules setModalRulesOpen={setModalRulesOpen} lvlGame={lvlGame} />
+      )}
     </div>
   );
 }
 ModalStart.propTypes = {
   setStartGame: PropTypes.func,
+  lvlGame: PropTypes.number,
+  modalRulesOpen: PropTypes.bool,
+  setModalRulesOpen: PropTypes.func,
 };
 
 ModalStart.defaultProps = {
   setStartGame: () => {},
+  lvlGame: 0,
+  modalRulesOpen: true,
+  setModalRulesOpen: () => {},
 };

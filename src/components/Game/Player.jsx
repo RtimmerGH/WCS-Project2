@@ -3,6 +3,20 @@
 /* eslint-disable no-shadow */
 import React from "react";
 import PropTypes from "prop-types";
+import { FaShieldAlt } from "react-icons/fa";
+import {
+  GiCardDiscard,
+  GiDespair,
+  GiPoisonBottle,
+  GiDodging,
+  GiFist,
+  GiArmorUpgrade,
+  GiHumanTarget,
+  GiLifeBar,
+  GiMagicSwirl,
+  GiSwordsPower,
+  GiHealthIncrease,
+} from "react-icons/gi";
 import "../../assets/css/Game/player.css";
 
 export default function Player({ player, playerLifeChange }) {
@@ -10,13 +24,13 @@ export default function Player({ player, playerLifeChange }) {
     <div className="player-stat">
       <div className="Top-Player">
         <div className="block-player">
-          {/*<FontAwesomeIcon
-            icon="fa-solid fa-shield-halved"
-            fixedWidth={false}
-            size="2x"
-            title={`${player.tempBuff.block.toString()} points de Block`}
-          />*/}
+          <FaShieldAlt
+            title={`|||||    ${player.tempBuff.block.toString()} points de Block`}
+          />
           {player.tempBuff.block > 0 && `${player.tempBuff.block} `}
+        </div>
+        <div className="player-Name">
+          <h3>joueur</h3>
         </div>
         <div
           className={
@@ -25,12 +39,9 @@ export default function Player({ player, playerLifeChange }) {
         >
           {" "}
           <span>
-            {/*<FontAwesomeIcon
-              icon="fa-solid fa-heart"
-              title="Derniers dégats subis ou derniers soins reçus"
-        />*/}
+            <GiLifeBar title="|||||    Derniers dégats subis ou derniers soins reçus" />{" "}
+            {playerLifeChange}
           </span>
-          {playerLifeChange}
         </div>
       </div>
       <div className="entoure-barredevie-player">
@@ -44,79 +55,99 @@ export default function Player({ player, playerLifeChange }) {
           }}
         />
       </div>
-
       <div>
         {player.tempBuff.avoidAttack > 0 && (
           <span className="avoidAttack">
-            {/*<FontAwesomeIcon
-              icon="fa-solid fa-person-running"
-              fixedWidth={false}
-              size="1x"
-              title="Evite la prochaine attaque"
-        />*/}
+            <GiDodging title="|||||    Evite la prochaine attaque" />
             {player.tempBuff.avoidAttack > 0 &&
               `${player.tempBuff.avoidAttack}`}{" "}
           </span>
         )}
         {player.fullCombatBuff.attackBuff > 0 && (
           <span className="attackBuff">
-            {/*<FontAwesomeIcon
-              icon="fa-solid fa-hand-fist"
-              fixedWidth={false}
-              size="1x"
-              title={`${player.fullCombatBuff.attackBuff.toString()} points d'attaque supplémentaires`}
-        />*/}
+            <GiFist
+              title={`|||||    ${player.fullCombatBuff.attackBuff.toString()} points d'attaque supplémentaires`}
+            />
             {player.fullCombatBuff.attackBuff > 0 &&
               `${player.fullCombatBuff.attackBuff}`}{" "}
           </span>
         )}
         {player.fullCombatBuff.blockBuff > 0 && (
           <span className="blockBuff">
-            {/*<FontAwesomeIcon
-              icon="fa-solid fa-shield"
-              fixedWidth={false}
-              size="1x"
-              title={`${player.fullCombatBuff.blockBuff.toString()} points de Block supplémentaires`}
-        />*/}
+            <GiArmorUpgrade
+              title={`|||||    ${player.fullCombatBuff.blockBuff.toString()} points de Block supplémentaires`}
+            />
             {player.fullCombatBuff.blockBuff > 0 &&
               `${player.fullCombatBuff.blockBuff}`}{" "}
           </span>
         )}
-
+        {player.fullGameBuff.healBuff > 0 && (
+          <span className="healPlusBuff" style={{ color: "orange" }}>
+            <GiHealthIncrease
+              title={`|||||    ${player.fullGameBuff.healBuff.toString()} points de Soin supplémentaires`}
+            />
+            {player.fullGameBuff.healBuff > 0 &&
+              `${player.fullGameBuff.healBuff}`}{" "}
+          </span>
+        )}
+        {player.fullGameBuff.magicBuff > 0 && (
+          <span className="magicBuff" style={{ color: "orange" }}>
+            <GiMagicSwirl
+              title={`|||||    ${player.fullGameBuff.magicBuff.toString()} points de dégats magiques supplémentaires`}
+            />
+            {player.fullGameBuff.magicBuff > 0 &&
+              `${player.fullGameBuff.magicBuff}`}{" "}
+          </span>
+        )}
+        {player.fullGameBuff.physBuff > 0 && (
+          <span className="blockBuff" style={{ color: "orange" }}>
+            <GiSwordsPower
+              title={`|||||    ${player.fullGameBuff.physBuff.toString()} points de dégats physiques supplémentaires`}
+            />
+            {player.fullGameBuff.physBuff > 0 &&
+              `${player.fullGameBuff.physBuff}`}{" "}
+          </span>
+        )}
+        {player.fullGameBuff.defenseBuff > 0 && (
+          <span className="defenseBuff" style={{ color: "orange" }}>
+            <GiArmorUpgrade
+              title={`|||||    ${player.fullGameBuff.defenseBuff.toString()} points de Block supplémentaires`}
+            />
+            {player.fullGameBuff.defenseBuff > 0 &&
+              `${player.fullGameBuff.defenseBuff}`}{" "}
+          </span>
+        )}
+        {player.fullGameBuff.poisonBuff > 0 && (
+          <span className="poisonBuff" style={{ color: "orange" }}>
+            <GiPoisonBottle
+              title={`|||||    ${player.fullGameBuff.poisonBuff.toString()} points de poison supplémentaires`}
+            />
+            {player.fullGameBuff.poisonBuff > 0 &&
+              `${player.fullGameBuff.poisonBuff}`}{" "}
+          </span>
+        )}
         <div>
           {player.debuff.vulnerable > 0 && (
             <span className="vulnerable">
-              {/*<FontAwesomeIcon
-                icon="fa-solid fa-crosshairs"
-                title="Subi 25% de dégats supplémentaires"
-          />*/}
+              <GiHumanTarget title="|||||    Subi 25% de dégats supplémentaires" />
               {player.debuff.vulnerable > 0 && `${player.debuff.vulnerable}`}{" "}
             </span>
           )}
           {player.debuff.weak > 0 && (
             <span className="weak">
-              {/*<FontAwesomeIcon
-                icon="fa-solid fa-person-cane"
-                title="dégats réduits de 50%"
-          />*/}
+              <GiDespair title="|||||    dégats réduits de 50%" />
               {player.debuff.weak > 0 && `${player.debuff.weak}`}{" "}
             </span>
           )}
           {player.debuff.poison > 0 && (
             <span className="poison">
-              {/*<FontAwesomeIcon
-                icon="fa-solid fa-skull-crossbones"
-                title="Subi des dégats de poison à chaque début de tour"
-          />*/}
+              <GiPoisonBottle title="|||||    Subi des dégats de poison à chaque début de tour" />
               {player.debuff.poison > 0 && `${player.debuff.poison}`}{" "}
             </span>
           )}
           {player.debuff.distribDown > -1 && (
             <span className="distribDown">
-              {/*<FontAwesomeIcon
-                icon="fa-solid fa-hand-point-down"
-                title="Reçoit 1 carte de moins au début du tour"
-          />*/}
+              <GiCardDiscard title="|||||    Reçoit 1 carte de moins au début du tour" />
               {player.debuff.distribDown > -1 &&
                 `${player.debuff.distribDown + 1}`}
             </span>
