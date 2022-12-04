@@ -95,7 +95,7 @@
 .drawpile,
 .cimetery {
   height: 100%;
-  padding: 1vw;
+  padding: 0;
   width: 10vw;
 }
 
@@ -106,9 +106,34 @@
   position: absolute;
   top: 0;
 }
+.dumpcard-mini {
+  display: none;
+}
 
 @media screen and (max-width: 875px) {
   .hand {
     flex-wrap: wrap;
   }
+  .dumpcard {
+    display: none;
+  }
+  .dumpcard-mini {
+    display: flex;
+    position: absolute;
+    top: -62%;
+    left: 3%;
+    color:#c89d3e;
+  }
+}
+
+.enemy-attack{  
+  animation: attack 0.6s;
+}
+@keyframes attack {
+  0% {
+  transform:translateY(20px);
+  }  
+  100% {
+    transform:translateY(0);
+    }
 }
