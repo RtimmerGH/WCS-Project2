@@ -1,7 +1,7 @@
-/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import PropTypes from "prop-types";
 import React, { useState, useRef, useEffect } from "react";
+import { GiGraveyard, GiCardDraw } from "react-icons/gi";
 import GameCard from "./GameCard";
 import backCard from "../../assets/img/Game/back.png";
 import "../../assets/css/Game/Deck.css";
@@ -16,6 +16,7 @@ export default function Deck({
   setEnemyStats,
   render,
   setRender,
+  enemyActionsResolution,
 }) {
   // Les States
 
@@ -163,20 +164,31 @@ export default function Deck({
     <>
       <div>
         <div
-          className="drag-drop-zone"
+          className={`drag-drop-zone ${
+            enemyActionsResolution ? " enemy-attack" : ""
+          }`}
           onDrop={(e) => dropEnnemy(e)}
           onDragOver={(e) => allowDrop(e)}
         />
       </div>
       <div className="game-bottom">
+        <div className="dumpcard-mini">
+          <p title="||||||   Pioche">
+            <GiCardDraw /> {deck.drawPile.length}
+          </p>
+          <p title="||||||   Cimetierre">
+            {" . "}
+            <GiGraveyard /> {deck.cimetery.length}
+          </p>
+        </div>
         <div className="dumpcard">
-          <div className="drawpile">
+          <div className="drawpile" title="||||||   Pioche">
             <div className="infoparent">
               <p className="infodumpcard">{deck.drawPile.length}</p>
               <img src={backCard} alt="Deck" draggable="false" />
             </div>
           </div>
-          <div className="cimetery">
+          <div className="cimetery" title="||||||   Cimetierre">
             <div className="infoparent">
               <p className="infodumpcard">{deck.cimetery.length}</p>
               <img src={backCard} alt="Cemetery" draggable="false" />
@@ -184,7 +196,7 @@ export default function Deck({
             </div>
           </div>
         </div>
-        <div className="hand">
+        <div className={`hand${enemyActionsResolution ? " enemy-attack" : ""}`}>
           {champions &&
             hand.map((item, index) => {
               // Check Mana
@@ -221,9 +233,6 @@ export default function Deck({
                   }`}
                   key={champions[item].champion.id}
                   style={{
-                    /* margin: "20px auto",
-                  textAlign: "center",
-                  fontSize: "40px", */
                     animate: false,
                     sticky: false,
                     dragx: true,
@@ -234,7 +243,7 @@ export default function Deck({
                   }}
                   onDragStart={(e) => dragStart(e, index)}
                   onDragEnter={(e) => dragEnter(e, index)}
-                  onDragEnd={drop}
+                  /* onDragEnd={drop} */
                   draggable={cardEnergy <= playerStats.currentEnergy}
                 >
                   <GameCard
@@ -315,7 +324,9 @@ Deck.propTypes = {
       vulnerable: PropTypes.number,
       weak: PropTypes.number,
       poison: PropTypes.number,
+      distribDown: PropTypes.number,
     }),
+    startDistrib: PropTypes.number,
     drawCard: PropTypes.number,
   }),
   setPlayerStats: PropTypes.func,
@@ -343,6 +354,7 @@ Deck.propTypes = {
   setStartPlayerTurn: PropTypes.func,
   setRender: PropTypes.func,
   render: PropTypes.bool,
+  enemyActionsResolution: PropTypes.bool,
 };
 
 Deck.defaultProps = {
@@ -378,6 +390,7 @@ Deck.defaultProps = {
       poison: 0,
     },
     drawCard: 0,
+    startDistrib: 5,
   },
   setPlayerStats: () => {},
   enemyStats: {
@@ -397,6 +410,7 @@ Deck.defaultProps = {
       vulnerable: 0,
       weak: 0,
       poison: 0,
+      distribDown: 0,
     },
   },
   setEnemyStats: () => {},
@@ -404,4 +418,5 @@ Deck.defaultProps = {
   setStartPlayerTurn: () => {},
   setRender: () => {},
   render: false,
+  enemyActionsResolution: false,
 };

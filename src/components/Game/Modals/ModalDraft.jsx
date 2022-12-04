@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useLayoutEffect } from "react";
 import PropTypes from "prop-types";
 import CardLib from "../../Library/CardLib";
 import api from "../../../services/api";
@@ -158,7 +158,7 @@ export default function ModalDraft({
   }, [champArray]);
 
   // préparation des trois cartes à présenter pour le choix
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (champArray.length !== 0) {
       const myArr = [];
       for (let i = 0; i < 3; i += 1) {
