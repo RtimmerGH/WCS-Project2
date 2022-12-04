@@ -35,8 +35,8 @@ export default function Game() {
   const [playerStats, setPlayerStats] = useState({
     currentLife: 100,
     maxLife: 100,
-    currentEnergy: 6,
-    maxEnergy: 6,
+    currentEnergy: 3,
+    maxEnergy: 3,
     tempBuff: { block: 0, avoidAttack: 0 },
     fullCombatBuff: { attackBuff: 0, blockBuff: 0 },
     fullGameBuff: {
