@@ -37,7 +37,14 @@ function ModalRules({ setModalRulesOpen, lvlGame }) {
           e.stopPropagation();
         }}
       >
-        <div className="modalRulesLibTitleCloseBtn">
+        <div
+          className="modalRulesLibTitleCloseBtn"
+          style={
+            lvlGame === 0
+              ? { justifyContent: "flex-end" }
+              : { justifyContent: "space-between" }
+          }
+        >
           {(lvlGame === 1 || lvlGame === 3 || lvlGame === 5) && (
             <button
               type="button"
@@ -83,6 +90,8 @@ function ModalRules({ setModalRulesOpen, lvlGame }) {
                 <br />
                 Si la pile de pioche est vide, toutes les cartes du cimetierre
                 sont mélangées pour la remplir de nouveau.
+                <br />
+                la prochaine attaque de l'ennemi est affichée à côté de lui.
                 <br />
                 Pour gagner le combat tu dois vider totalement la barre de vie
                 ennemi.
