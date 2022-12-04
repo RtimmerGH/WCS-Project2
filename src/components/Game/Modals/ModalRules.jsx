@@ -83,6 +83,9 @@ function ModalRules({ setModalRulesOpen, lvlGame }) {
                 Fait glisser tes cartes sur l'ennemi pour lui infliger des
                 dégats ou générer des effets négatifs ou positifs.
                 <br />
+                Si tu joue sur Mobile, touche simplement la carte que tu veux
+                jouer
+                <br />
                 Chaque carte coûte des points d'Energy, lorsque tu n'as plus
                 assez d'Energy pour jouer, clique sur le bouton "End Turn".
                 <br />
