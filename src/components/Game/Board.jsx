@@ -25,6 +25,7 @@ export default function Board({
         enemyLifeChange={enemyLifeChange}
         enemyDisplayedActions={enemyDisplayedActions}
         lvlGame={lvlGame}
+        fightTurns={fightTurns}
       />
       <Player player={player} playerLifeChange={playerLifeChange} />
       <div className="energy-fdt">

@@ -107,3 +107,20 @@
   font-size: 1rem;
   white-space: wrap;
 }
+.GiDespair,.GiHumanTarget,.GiCardDiscard,.GiPoisonBottle{
+  color:rgb(248, 94, 94);
+}
+.GiDodging,
+.FaShieldAlt{
+  color: cadetblue;
+}
+.GiBroadsword,.GiHealing{
+  color:red;
+}
+.Boss-Intents{
+  display: flex;
+  position: absolute;
+  top: 245%;
+  left: -47%;
+  justify-content: center;
+}

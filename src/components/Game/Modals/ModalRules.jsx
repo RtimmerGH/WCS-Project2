@@ -136,7 +136,7 @@ function ModalRules({ setModalRulesOpen, lvlGame }) {
           </p>
           <p>
             <GiMagicShield color="pink" /> Resistance magique : permet de
-            bloquer les dégats physique reçus.(ennemi seulement)
+            bloquer les dégats magiques reçus.(ennemi seulement)
           </p>
           <p>
             <GiHeartBottle color="pink" /> Resistance au poison : permet de

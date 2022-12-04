@@ -1,8 +1,19 @@
 import React, { useState, useEffect, useLayoutEffect } from "react";
 import { Link } from "react-router-dom";
+import { FaShieldAlt } from "react-icons/fa";
+import {
+  GiDespair,
+  GiPoisonBottle,
+  GiDodging,
+  GiHumanTarget,
+  GiCardDiscard,
+  GiBroadsword,
+  GiHealing,
+} from "react-icons/gi";
 import ModalDisplay from "../components/Game/ModalDisplay";
 import Deck from "../components/Game/Deck";
 import Board from "../components/Game/Board";
+
 import "../assets/css/Game.css";
 
 export default function Game() {
@@ -63,7 +74,7 @@ export default function Game() {
     drawDebuff: 0,
     leech: false,
     distribDown: -1,
-    displayedActions: `25 Damages`,
+    displayedActions: { text1: `25 `, icon1: GiBroadsword },
   });
   // Objet représentant la liste des actions possible de l'ennemi pendant le combat
   const [indexActionList, setIndexActionList] = useState(0);
@@ -80,7 +91,11 @@ export default function Game() {
       drawDebuff: 0,
       leech: false,
       distribDown: -1,
-      displayedActions: `25 Damage`,
+      displayedActions: {
+        text1: `25 `,
+        icon1: GiBroadsword,
+        class1: "GiBroadsword",
+      },
     },
     {
       attack: 0,
@@ -94,7 +109,14 @@ export default function Game() {
       drawDebuff: 0,
       leech: false,
       distribDown: 2,
-      displayedActions: `20 Block / 2 -Distrib`,
+      displayedActions: {
+        text1: `20 `,
+        icon1: FaShieldAlt,
+        class1: "FaShieldAlt",
+        text2: ` 2 `,
+        icon2: GiCardDiscard,
+        class2: "GiCardDiscard",
+      },
     },
     {
       attack: 20,
@@ -108,7 +130,14 @@ export default function Game() {
       drawDebuff: 0,
       leech: false,
       distribDown: -1,
-      displayedActions: `20 Damage / 20 Block`,
+      displayedActions: {
+        text1: `20 `,
+        icon1: GiBroadsword,
+        class1: "GiBroadsword",
+        text2: ` 20 `,
+        icon2: FaShieldAlt,
+        class2: "FaShieldAlt",
+      },
     },
     {
       attack: 20,
@@ -122,7 +151,14 @@ export default function Game() {
       drawDebuff: 0,
       leech: false,
       distribDown: -1,
-      displayedActions: `20 Damage / 2 Weak`,
+      displayedActions: {
+        text1: `20 `,
+        icon1: GiBroadsword,
+        class1: "GiBroadsword",
+        text2: ` 2 `,
+        icon2: GiDespair,
+        class2: "GiDespair",
+      },
     },
     {
       attack: 30,
@@ -136,7 +172,11 @@ export default function Game() {
       drawDebuff: 0,
       leech: false,
       distribDown: -1,
-      displayedActions: `30 Damages`,
+      displayedActions: {
+        text1: `30 `,
+        icon1: GiBroadsword,
+        class1: "GiBroadsword",
+      },
     },
   ]);
 
@@ -165,7 +205,7 @@ export default function Game() {
   // objet représentant les actions possibles de l'ennemi 2
   const actionEnemyLvl3 = [
     {
-      attack: 25,
+      attack: 30,
       poison: 0,
       block: 0,
       avoidAttack: 0,
@@ -175,13 +215,20 @@ export default function Game() {
       blockBuff: 0,
       drawDebuff: 0,
       leech: false,
-      distribDown: -1,
-      displayedActions: `25 Damages`,
+      distribDown: 1,
+      displayedActions: {
+        text1: `30 `,
+        icon1: GiBroadsword,
+        class1: "GiBroadsword",
+        text2: ` 1 `,
+        icon2: GiCardDiscard,
+        class2: "GiCardDiscard",
+      },
     },
     {
-      attack: 15,
+      attack: 25,
       poison: 0,
-      block: 15,
+      block: 20,
       avoidAttack: 0,
       vulne: 0,
       weak: 0,
@@ -190,7 +237,14 @@ export default function Game() {
       drawDebuff: 0,
       leech: false,
       distribDown: -1,
-      displayedActions: `15 Damages / 15 Block`,
+      displayedActions: {
+        text1: `25 `,
+        icon1: GiBroadsword,
+        class1: "GiBroadsword",
+        text2: ` 20 `,
+        icon2: FaShieldAlt,
+        class2: "FaShieldAlt",
+      },
     },
     {
       attack: 0,
@@ -204,7 +258,14 @@ export default function Game() {
       drawDebuff: 0,
       leech: false,
       distribDown: -1,
-      displayedActions: `25 Block / 1 Vulne`,
+      displayedActions: {
+        text1: `25 `,
+        icon1: FaShieldAlt,
+        class1: "FaShieldAlt",
+        text2: ` 1 `,
+        icon2: GiHumanTarget,
+        class2: "GiHumanTarget",
+      },
     },
     {
       attack: 30,
@@ -218,10 +279,17 @@ export default function Game() {
       drawDebuff: 0,
       leech: false,
       distribDown: -1,
-      displayedActions: `30 Damages / 10 Block`,
+      displayedActions: {
+        text1: `30 `,
+        icon1: GiBroadsword,
+        class1: "GiBroadsword",
+        text2: ` 10 `,
+        icon2: FaShieldAlt,
+        class2: "FaShieldAlt",
+      },
     },
     {
-      attack: 25,
+      attack: 30,
       poison: 0,
       block: 0,
       avoidAttack: 0,
@@ -232,7 +300,14 @@ export default function Game() {
       drawDebuff: 0,
       leech: true,
       distribDown: -1,
-      displayedActions: `25 Damages / Leech Life`,
+      displayedActions: {
+        text1: `30 `,
+        icon1: GiBroadsword,
+        class1: "GiBroadsword",
+        text2: ` Vol de vie `,
+        icon2: GiHealing,
+        class2: "GiHealing",
+      },
     },
   ];
   // objet représentant les actions possibles de l'ennemi 3
@@ -249,7 +324,14 @@ export default function Game() {
       drawDebuff: 0,
       leech: false,
       distribDown: -1,
-      displayedActions: `30 Damages / 15 Block`,
+      displayedActions: {
+        text1: `30 `,
+        icon1: GiBroadsword,
+        class1: "GiBroadsword",
+        text2: ` 15 `,
+        icon2: FaShieldAlt,
+        class2: "FaShieldAlt",
+      },
     },
     {
       attack: 0,
@@ -263,7 +345,14 @@ export default function Game() {
       drawDebuff: 0,
       leech: false,
       distribDown: -1,
-      displayedActions: `5 Poison / 15 Block`,
+      displayedActions: {
+        text1: `5 `,
+        icon1: GiPoisonBottle,
+        class1: "GiPoisonBottle",
+        text2: ` 15 `,
+        icon2: FaShieldAlt,
+        class2: "FaShieldAlt",
+      },
     },
     {
       attack: 40,
@@ -277,7 +366,14 @@ export default function Game() {
       drawDebuff: 0,
       leech: true,
       distribDown: -1,
-      displayedActions: `40 Damages / Leech Life`,
+      displayedActions: {
+        text1: `40 `,
+        icon1: GiBroadsword,
+        class1: "GiBroadsword",
+        text2: ` 15 `,
+        icon2: GiHealing,
+        class2: "GiHealing",
+      },
     },
     {
       attack: 0,
@@ -291,12 +387,19 @@ export default function Game() {
       drawDebuff: 0,
       leech: false,
       distribDown: -1,
-      displayedActions: `1 Dodge / 1 Weak`,
+      displayedActions: {
+        text1: `1 `,
+        icon1: GiDodging,
+        class1: "GiDodging",
+        text2: ` 1 `,
+        icon2: GiDespair,
+        class2: "GiDespair",
+      },
     },
     {
-      attack: 30,
+      attack: 50,
       poison: 0,
-      block: 20,
+      block: 0,
       avoidAttack: 0,
       vulne: 0,
       weak: 0,
@@ -304,8 +407,15 @@ export default function Game() {
       blockBuff: 0,
       drawDebuff: 0,
       leech: false,
-      distribDown: -1,
-      displayedActions: `30 Damages / 20 Block`,
+      distribDown: 1,
+      displayedActions: {
+        text1: `50 `,
+        icon1: GiBroadsword,
+        class1: "GiBroadsword",
+        text2: ` 1 `,
+        icon2: GiCardDiscard,
+        class2: "GiCardDiscard",
+      },
     },
   ];
   // fonctions--------------------------------------------------
@@ -344,6 +454,9 @@ export default function Game() {
       enemyCopy.resistMag += 2;
       enemyCopy.resistPhys += 2;
       enemyCopy.resistPoison += 2;
+    }
+    if (lvlGame === 5 && fightTurns === 11) {
+      enemyCopy.fullCombatBuff.attackBuff += 50;
     }
     return enemyCopy;
   };
@@ -454,8 +567,8 @@ export default function Game() {
         playerCopy.debuff.poison += enemyActions.poison;
       }
       /* dodge action */
-      if (enemyActions.dodge > 0) {
-        enemyCopy.tempBuff.avoidAttack += enemyActions.dodge;
+      if (enemyActions.avoidAttack > 0) {
+        enemyCopy.tempBuff.avoidAttack += enemyActions.avoidAttack;
       }
       /* vulnerability action */
       if (enemyActions.vulnerability > 0) {
