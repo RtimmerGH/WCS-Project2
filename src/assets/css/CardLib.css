@@ -20,17 +20,16 @@
 .manaCard {
   display: flex;
   width: 20%;
-  padding-left: 3%;
-  padding-top: 6%;
+  padding-left: 5%;
+  padding-top: 3%;
   color: #c89d3e;
   align-items: center;
 }
 .manaCard h3 {
-  font-size: 0.6rem;
-  font-size: calc(0.7rem + 1vw);
+  font-size: 1.6rem;
   font-family: "BeaufortforLOL-Bold";
-  padding-left: 15%;
-  margin: 5%;
+  padding-left: 0%;
+  margin: 0%;
   border-radius: 10px;
 }
 .manared .manaCard h3 {
@@ -57,24 +56,27 @@
     rgba(200, 157, 62, 1) 100%
   );
   margin: auto;
-  width: 55%;
+  width: fit-content;
+  min-width: 55%;
   font-family: "BeaufortforLOL-Bold";
   border-radius: 10px;
   border-style: double;
   border-color: hwb(0 6% 94%);
   margin-bottom: 2px;
   position: absolute;
-  left: 24%;
-  bottom: 74%;
   z-index: 1;
+  top: 22%;
+  left: 51%;
+  transform: translate(-50%,-50%);
+  white-space: nowrap;
 }
 .champCardName h3 {
   margin: auto;
   color: black;
   text-align: center;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   font-weight: 900;
-  line-height: 0.8rem;
+  line-height: 0.9rem;
 }
 
 .cardPicContainer {
@@ -113,8 +115,7 @@
 }
 .skillsCard p {
   font-family: "BeaufortforLOL-Bold";
-  font-size: 0.6rem;
-  font-size: calc((0.6rem + 1vw) * 0.6);
+  font-size: 0.8rem;
   line-height: 82%;
   margin: 0px;
   margin-left: 2%;
@@ -127,11 +128,11 @@
 
 @media screen and (max-width: 1135px) {
   .skillsCard p {
-    font-size: 0.5rem;
+    font-size: 0.6rem;
   }
   .champCardName h3 {
-    font-size: 0.6rem;
-    line-height: 0.6rem;
+    font-size: 0.7rem;
+    line-height: 0.7rem;
     font-weight: 500;
   }
   .champCard {
@@ -139,6 +140,9 @@
     min-width: 126px;
     max-height: 206px;
     max-width: 151px;
+  }
+  .manaCard h3 {
+    font-size: 1.5rem;
   }
 }
 
@@ -157,6 +161,9 @@
     max-height: 137px;
     max-width: 100px;
   }
+  .manaCard h3 {
+    font-size: 1.2rem;
+  }
 }
 
 @media screen and (max-width: 750px) {
@@ -173,5 +180,8 @@
     min-width: 85px;
     max-height: 116px;
     max-width: 85px;
+  }
+  .manaCard h3 {
+    font-size: 0.9rem;
   }
 }

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable import/no-extraneous-dependencies */
 import React from "react";
 import PropTypes from "prop-types";
@@ -13,6 +14,9 @@ import {
   GiArmorUpgrade,
   GiHumanTarget,
   GiLifeBar,
+  GiHealing,
+  GiCardDiscard,
+  GiBroadsword,
 } from "react-icons/gi";
 import "../../assets/css/Game/Enemy.css";
 
@@ -21,14 +25,14 @@ export default function Enemy({
   enemyLifeChange,
   enemyDisplayedActions,
   lvlGame,
+  fightTurns,
 }) {
   const enemyPassives = (lvl) => {
     switch (lvl) {
       case 3:
         return "Tous les 3 tours l'Herald gagne 1 point de dégat";
       case 5:
-      case 6:
-        return "Tous les 3 tours Nashor gagne 2 points de dégats et 2 point en resistance Physique, Magique et Poison";
+        return "Tous les 3 tours Nashor gagne 2 points de dégats et 2 point en resistance Physique, Magique et Poison / Tour 12: Enrage";
       default:
         return "";
     }
@@ -57,7 +61,10 @@ export default function Enemy({
           {enemy.tempBuff.block > 0 && `${enemy.tempBuff.block}  `}
         </div>
         <div>
-          <h3>{enemyName(lvlGame)}</h3>
+          <h3>
+            {enemyName(lvlGame)}
+            {lvlGame === 5 && fightTurns > 11 && ` enragé`}
+          </h3>
         </div>
         <div
           className={enemyLifeChange > 0 ? "enemyLifeChange" : "enemyinferieur"}
@@ -157,9 +164,23 @@ export default function Enemy({
           )}
         </div>
         <div className="Boss-Description-container">
-          <p className="Boss-Description">
-            Prochaine Attaque: {enemyDisplayedActions}
-          </p>
+          <div className="Boss-Intents">
+            {/* <p className="Boss-Description">Prochaine Attaque: </p> */}
+            <p className={enemyDisplayedActions.class1}>
+              {enemyDisplayedActions.text1}
+              <enemyDisplayedActions.icon1 />
+            </p>
+            <p
+              className={
+                enemyDisplayedActions.class2 ? enemyDisplayedActions.class2 : ""
+              }
+            >
+              {"  "}
+              {enemyDisplayedActions.text2 &&
+                `. ${enemyDisplayedActions.text2}`}
+              {enemyDisplayedActions.icon2 && <enemyDisplayedActions.icon2 />}
+            </p>
+          </div>
           <p className="Boss-Description">{enemyPassives(lvlGame)}</p>
         </div>
       </div>
@@ -191,6 +212,7 @@ Enemy.propTypes = {
   enemyLifeChange: PropTypes.number,
   enemyDisplayedActions: PropTypes.string,
   lvlGame: PropTypes.number,
+  fightTurns: PropTypes.number,
 };
 
 Enemy.defaultProps = {
@@ -207,4 +229,5 @@ Enemy.defaultProps = {
   enemyLifeChange: 0,
   enemyDisplayedActions: "",
   lvlGame: 0,
+  fightTurns: 1,
 };
