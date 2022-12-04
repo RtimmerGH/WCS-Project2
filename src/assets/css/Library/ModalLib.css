@@ -60,11 +60,13 @@
   text-align: center;
   color: #c89d3e;
   font-size: 2.5rem;
+  text-shadow: 3px 3px 2px black;
 }
 
 .modalLibContainer .modalLibTitle h2 {
   font-size: 2.2rem;
   margin-bottom: 0.5rem;
+  text-shadow: 3px 2px 2px black;
 }
 
 .modalLibTitleCloseBtn {

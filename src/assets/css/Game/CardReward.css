@@ -26,3 +26,12 @@
   border: 1px solid var(--secondary-color);
   cursor: url("../../cursor/cursor.cur"), auto;
 }
+
+@media screen and (max-width: 1024px) {
+  .ModalReward-container {
+    margin-top: 5vh;
+  }
+  .ModalReward-container h1, .ModalReward-container h2{
+    font-size:1.5rem;
+  }
+}

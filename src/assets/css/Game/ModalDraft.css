@@ -191,7 +191,7 @@
 
 @media screen and (min-width: 1001px) {
   .energy-Stats {
-    top: 8%;
+    top: 5%;
   }
 }
 
@@ -211,3 +211,10 @@
 .Deck-Complete h1 {
   text-shadow: 1px 1px 3px var(--font-color);
 }
+
+@media screen and (max-width: 1260px) {
+  .Deck-Complete {
+    font-size: 0.6rem;
+  }
+}
+
