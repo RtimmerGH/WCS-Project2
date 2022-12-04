@@ -244,6 +244,14 @@ export default function Deck({
                   onDragStart={(e) => dragStart(e, index)}
                   onDragEnter={(e) => dragEnter(e, index)}
                   /* onDragEnd={drop} */
+                  onTouchStart={() =>
+                    cardEnergy <= playerStats.currentEnergy &&
+                    setCardManager({
+                      index: item,
+                      isPlayed: true,
+                      actionDone: false,
+                    })
+                  }
                   draggable={cardEnergy <= playerStats.currentEnergy}
                 >
                   <GameCard
