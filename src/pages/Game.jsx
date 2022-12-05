@@ -11,6 +11,7 @@ import {
   GiHealing,
 } from "react-icons/gi";
 import ModalDisplay from "../components/Game/ModalDisplay";
+import ModalRotate from "../components/Game/Modals/ModalRotate";
 import Deck from "../components/Game/Deck";
 import Board from "../components/Game/Board";
 
@@ -682,6 +683,8 @@ export default function Game() {
             setRender={setRender}
             render={render}
             enemyActionsResolution={enemyActionsResolution}
+            lvlGame={lvlGame}
+            fightTurns={fightTurns}
           />
         </div>
       )}
@@ -715,6 +718,7 @@ export default function Game() {
           </button>
         </div>
       )}
+      <ModalRotate />
     </div>
   );
 }

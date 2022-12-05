@@ -189,7 +189,7 @@ ModalDisplay.propTypes = {
         drawDebuff: PropTypes.number,
         leech: PropTypes.bool,
         distribDown: PropTypes.number,
-        displayedActions: PropTypes.string,
+        displayedActions: PropTypes.shape({}),
       },
       {
         attack: PropTypes.number,
@@ -203,7 +203,7 @@ ModalDisplay.propTypes = {
         drawDebuff: PropTypes.number,
         leech: PropTypes.bool,
         distribDown: PropTypes.number,
-        displayedActions: PropTypes.string,
+        displayedActions: PropTypes.shape({}),
       },
       {
         attack: PropTypes.number,
@@ -217,7 +217,7 @@ ModalDisplay.propTypes = {
         drawDebuff: PropTypes.number,
         leech: PropTypes.bool,
         distribDown: PropTypes.number,
-        displayedActions: PropTypes.string,
+        displayedActions: PropTypes.shape({}),
       },
       {
         attack: PropTypes.number,
@@ -231,7 +231,7 @@ ModalDisplay.propTypes = {
         drawDebuff: PropTypes.number,
         leech: PropTypes.bool,
         distribDown: PropTypes.number,
-        displayedActions: PropTypes.string,
+        displayedActions: PropTypes.shape({}),
       },
       {
         attack: PropTypes.number,
@@ -245,7 +245,7 @@ ModalDisplay.propTypes = {
         drawDebuff: PropTypes.number,
         leech: PropTypes.bool,
         distribDown: PropTypes.number,
-        displayedActions: PropTypes.string,
+        displayedActions: PropTypes.shape({}),
       }
     )
   ),
@@ -263,7 +263,7 @@ ModalDisplay.propTypes = {
         drawDebuff: PropTypes.number,
         leech: PropTypes.bool,
         distribDown: PropTypes.number,
-        displayedActions: PropTypes.string,
+        displayedActions: PropTypes.shape({}),
       },
       {
         attack: PropTypes.number,
@@ -277,7 +277,7 @@ ModalDisplay.propTypes = {
         drawDebuff: PropTypes.number,
         leech: PropTypes.bool,
         distribDown: PropTypes.number,
-        displayedActions: PropTypes.string,
+        displayedActions: PropTypes.shape({}),
       },
       {
         attack: PropTypes.number,
@@ -291,7 +291,7 @@ ModalDisplay.propTypes = {
         drawDebuff: PropTypes.number,
         leech: PropTypes.bool,
         distribDown: PropTypes.number,
-        displayedActions: PropTypes.string,
+        displayedActions: PropTypes.shape({}),
       },
       {
         attack: PropTypes.number,
@@ -305,7 +305,7 @@ ModalDisplay.propTypes = {
         drawDebuff: PropTypes.number,
         leech: PropTypes.bool,
         distribDown: PropTypes.number,
-        displayedActions: PropTypes.string,
+        displayedActions: PropTypes.shape({}),
       },
       {
         attack: PropTypes.number,
@@ -319,7 +319,7 @@ ModalDisplay.propTypes = {
         drawDebuff: PropTypes.number,
         leech: PropTypes.bool,
         distribDown: PropTypes.number,
-        displayedActions: PropTypes.string,
+        displayedActions: PropTypes.shape({}),
       }
     )
   ),
@@ -422,7 +422,7 @@ ModalDisplay.defaultProps = {
       drawDebuff: 0,
       leech: false,
       distribDown: -1,
-      displayedActions: `25 Damages`,
+      displayedActions: {},
     },
     {
       attack: 15,
@@ -436,7 +436,7 @@ ModalDisplay.defaultProps = {
       drawDebuff: 0,
       leech: false,
       distribDown: -1,
-      displayedActions: `15 Damages / 15 Block`,
+      displayedActions: {},
     },
     {
       attack: 0,
@@ -450,7 +450,7 @@ ModalDisplay.defaultProps = {
       drawDebuff: 0,
       leech: false,
       distribDown: -1,
-      displayedActions: `25 Block / 1 Vulne`,
+      displayedActions: {},
     },
     {
       attack: 30,
@@ -464,7 +464,7 @@ ModalDisplay.defaultProps = {
       drawDebuff: 0,
       leech: false,
       distribDown: -1,
-      displayedActions: `30 Damages / 10 Block`,
+      displayedActions: {},
     },
     {
       attack: 25,
@@ -478,7 +478,7 @@ ModalDisplay.defaultProps = {
       drawDebuff: 0,
       leech: true,
       distribDown: -1,
-      displayedActions: `25 Damages / Leech Life`,
+      displayedActions: {},
     },
   ],
 
@@ -495,7 +495,7 @@ ModalDisplay.defaultProps = {
       drawDebuff: 0,
       leech: false,
       distribDown: -1,
-      displayedActions: `30 Damages / 15 Block`,
+      displayedActions: {},
     },
     {
       attack: 0,
@@ -509,7 +509,7 @@ ModalDisplay.defaultProps = {
       drawDebuff: 0,
       leech: false,
       distribDown: -1,
-      displayedActions: `5 Poison / 15 Block`,
+      displayedActions: {},
     },
     {
       attack: 40,
@@ -523,7 +523,7 @@ ModalDisplay.defaultProps = {
       drawDebuff: 0,
       leech: true,
       distribDown: -1,
-      displayedActions: `40 Damages / Leech Life`,
+      displayedActions: {},
     },
     {
       attack: 0,
@@ -537,7 +537,7 @@ ModalDisplay.defaultProps = {
       drawDebuff: 0,
       leech: false,
       distribDown: -1,
-      displayedActions: `1 Dodge / 1 Weak`,
+      displayedActions: {},
     },
     {
       attack: 30,
@@ -551,7 +551,7 @@ ModalDisplay.defaultProps = {
       drawDebuff: 0,
       leech: false,
       distribDown: -1,
-      displayedActions: `30 Damages / 20 Block`,
+      displayedActions: {},
     },
   ],
 

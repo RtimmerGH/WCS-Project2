@@ -17,6 +17,8 @@ export default function Deck({
   render,
   setRender,
   enemyActionsResolution,
+  lvlGame,
+  fightTurns,
 }) {
   // Les States
 
@@ -164,9 +166,9 @@ export default function Deck({
     <>
       <div>
         <div
-          className={`drag-drop-zone ${
+          className={`drag-drop-zone${
             enemyActionsResolution ? " enemy-attack" : ""
-          }`}
+          }${lvlGame === 5 && fightTurns > 11 ? " enraged" : ""}`}
           onDrop={(e) => dropEnnemy(e)}
           onDragOver={(e) => allowDrop(e)}
         />
@@ -363,6 +365,8 @@ Deck.propTypes = {
   setRender: PropTypes.func,
   render: PropTypes.bool,
   enemyActionsResolution: PropTypes.bool,
+  lvlGame: PropTypes.number,
+  fightTurns: PropTypes.number,
 };
 
 Deck.defaultProps = {
@@ -427,4 +431,6 @@ Deck.defaultProps = {
   setRender: () => {},
   render: false,
   enemyActionsResolution: false,
+  lvlGame: 0,
+  fightTurns: 1,
 };
