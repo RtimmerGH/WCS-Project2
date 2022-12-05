@@ -7,7 +7,7 @@
 .findetour-game {
   background: none;
   border: 1px solid var(--secondary-color);
-  background: url("../../img/Board/Button-Image.jpg");
+  background-color:var(--bg-color-opacity) ;
   border-radius: 10px;
   color: #fff;
   font-size: 1rem;
@@ -17,10 +17,12 @@
   height: fit-content;
   position: absolute;
   bottom: 15%;
+  color:#c89d3e;
+  text-shadow: 2px 2px 2px black;
 }
 .energy-div {
   position: absolute;
-  bottom: 10vh;
+  bottom: 7vh;
   left: 6vw;
 }
 .energy-text {
@@ -53,14 +55,14 @@
   border-radius: 50%;
   right: 20vh;
   bottom: 35vh;
-  background: url("../../img/Board/Button-Image.jpg");
+  background: url("../../img/Board/Button-Image.jpg"); 
   border: 1px solid var(--secondary-color);
 }
 
 .menu-game{
   background: none;
   border: 1px solid var(--secondary-color);
-  background: url("../../img/Board/Button-Image.jpg");
+  background-color:var(--bg-color-opacity) ;
   border-radius: 10px;
   color: #fff;
   font-size: 1rem;
@@ -70,6 +72,8 @@
   height: fit-content;
   position: absolute;
   bottom: 80%;
+  color:#c89d3e;
+  text-shadow: 2px 2px 2px black;
 }
 @media screen and (max-width: 1024px) {
   .energy-div {
