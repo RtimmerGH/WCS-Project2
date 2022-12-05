@@ -64,7 +64,7 @@
   color: #c89d3e;
 }
 
-.modalRulesPhases p{
+.modalRulesPhases p, .modalRulesPhases h2 {
   text-align: center;
 }
 
