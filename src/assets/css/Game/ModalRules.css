@@ -80,7 +80,7 @@
     position:fixed;
     width: 100vw;
     height: 100vh;
-    z-index: 14;
+    z-index: 16;
     background-color:var(--bg-color-opacity)
 
   }
