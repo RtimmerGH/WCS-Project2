@@ -29,3 +29,8 @@
   max-height: 75vh;
   cursor: url("../../cursor/cursor.cur"), auto;
 }
+@media screen and (max-width: 800px) {
+  .ModalReward-win h1 {
+    font-size: 1.5rem;
+  }
+}

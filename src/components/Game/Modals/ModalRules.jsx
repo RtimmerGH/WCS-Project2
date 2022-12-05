@@ -24,7 +24,7 @@ import "../../../assets/css/Game/ModalRules.css";
 
 function ModalRules({ setModalRulesOpen, lvlGame }) {
   return (
-    <button
+    <div
       type="button"
       className="modalRulesLibBackground"
       onClick={() => {
@@ -189,7 +189,7 @@ function ModalRules({ setModalRulesOpen, lvlGame }) {
           </p>
         </div>
       </div>
-    </button>
+    </div>
   );
 }
 

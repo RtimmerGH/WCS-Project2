@@ -15,6 +15,7 @@
   background-repeat: no-repeat;
   background-color: transparent;
   background-position: center;
+  animation: enemy-move 1s infinite;
 }
 .drag-drop-zone:hover {
   cursor: url("../../cursor/alt.cur"), auto;
@@ -136,4 +137,30 @@
   100% {
     transform:translateY(0);
     }
+}
+
+@keyframes enemy-move {
+  0% {
+  /* transform:translateY(0px); */
+  transform:translateX(0px);
+  }  
+  25% {
+  /* transform:translateY(2px); */
+  transform:translateX(2px);
+  }
+  50% {
+  /* transform:translateY(4px); */
+  transform:translateX(0px);
+  }
+  75% {
+  /* transform:translateY(2px); */
+  transform:translateX(-2px);
+  }
+  100% {
+  /* transform:translateY(0px); */
+  transform:translateX(0px);
+  }
+}
+.enraged{
+  filter: drop-shadow(0 0 0.75rem red);
 }

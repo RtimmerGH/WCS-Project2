@@ -68,10 +68,10 @@ export default function Enemy({
         </div>
         <div
           className={enemyLifeChange > 0 ? "enemyLifeChange" : "enemyinferieur"}
+          title="|||||    Derniers dégats subis ou derniers soins reçus"
         >
           <span>
-            <GiLifeBar title="|||||    Derniers dégats subis ou derniers soins reçus" />{" "}
-            {enemyLifeChange}
+            <GiLifeBar /> {enemyLifeChange}
           </span>
         </div>
       </div>
@@ -89,30 +89,35 @@ export default function Enemy({
 
       <div>
         {enemy.tempBuff.avoidAttack > 0 && (
-          <span className="avoidAttack">
+          <span
+            className="avoidAttack"
+            title="|||||    Evite la prochaine attaque"
+          >
             {" "}
-            <GiDodging title="|||||    Evite la prochaine attaque" />
+            <GiDodging />
             {enemy.tempBuff.avoidAttack > 0 &&
               `${enemy.tempBuff.avoidAttack}`}{" "}
           </span>
         )}
 
         {enemy.fullCombatBuff.attackBuff > 0 && (
-          <span className="AttackBuff">
+          <span
+            className="AttackBuff"
+            title={`|||||    ${enemy.fullCombatBuff.attackBuff.toString()} points d'attaque supplémentaires`}
+          >
             {" "}
-            <GiFist
-              title={`|||||    ${enemy.fullCombatBuff.attackBuff.toString()} points d'attaque supplémentaires`}
-            />
+            <GiFist />
             {enemy.fullCombatBuff.attackBuff > 0 &&
               `${enemy.fullCombatBuff.attackBuff}`}{" "}
           </span>
         )}
         {enemy.fullCombatBuff.blockBuff > 0 && (
-          <span className="blockBuff">
+          <span
+            className="blockBuff"
+            title={`|||||    ${enemy.fullCombatBuff.blockBuff.toString()} points de Block supplémentaires`}
+          >
             {" "}
-            <GiArmorUpgrade
-              title={`|||||    ${enemy.fullCombatBuff.blockBuff.toString()} points de Block supplémentaires`}
-            />
+            <GiArmorUpgrade />
             {enemy.fullCombatBuff.blockBuff > 0 &&
               ` ${enemy.fullCombatBuff.blockBuff}`}{" "}
           </span>
@@ -128,37 +133,49 @@ export default function Enemy({
           </span>
         )}
         {enemy.resistMag > 0 && (
-          <span className="resist-magic">
+          <span
+            className="resist-magic"
+            title="|||||    Réduit les dégats magiques reçus"
+          >
             {" "}
-            <GiMagicShield title="|||||    Réduit les dégats magiques reçus" />
+            <GiMagicShield />
             {enemy.resistMag > 0 && ` ${enemy.resistMag}`}{" "}
           </span>
         )}
         {enemy.resistPoison > 0 && (
-          <span className="resist-poison">
+          <span
+            className="resist-poison"
+            title="|||||    Réduit les dégats de poison reçus"
+          >
             {" "}
-            <GiHeartBottle title="|||||    Réduit les dégats de poison reçus" />
+            <GiHeartBottle />
             {enemy.resistPoison > 0 && ` ${enemy.resistPoison}`}{" "}
           </span>
         )}
         <div>
           {enemy.debuff.vulnerable > 0 && (
-            <span className="vulnerable">
+            <span
+              className="vulnerable"
+              title="|||||    Subi 25% de dégats supplémentaires"
+            >
               {" "}
-              <GiHumanTarget title="|||||    Subi 25% de dégats supplémentaires" />
+              <GiHumanTarget />
               {enemy.debuff.vulnerable > 0 && `${enemy.debuff.vulnerable}`}{" "}
             </span>
           )}
           {enemy.debuff.weak > 0 && (
-            <span className="weak">
-              <GiDespair title="|||||    dégats réduits de 50%" />
+            <span className="weak" title="|||||    dégats réduits de 50%">
+              <GiDespair />
               {enemy.debuff.weak > 0 && `${enemy.debuff.weak}`}{" "}
             </span>
           )}
           {enemy.debuff.poison > 0 && (
-            <span className="poison">
+            <span
+              className="poison"
+              title="|||||    Subi des dégats de poison à chaque début de tour"
+            >
               {" "}
-              <GiPoisonBottle title="|||||    Subi des dégats de poison à chaque début de tour" />
+              <GiPoisonBottle />
               {enemy.debuff.poison > 0 && `${enemy.debuff.poison}`}
             </span>
           )}
@@ -210,7 +227,14 @@ Enemy.propTypes = {
     }),
   }),
   enemyLifeChange: PropTypes.number,
-  enemyDisplayedActions: PropTypes.string,
+  enemyDisplayedActions: PropTypes.shape({
+    text1: PropTypes.string,
+    icon1: PropTypes.func,
+    class1: PropTypes.string,
+    text2: PropTypes.string,
+    icon2: PropTypes.func,
+    class2: PropTypes.string,
+  }),
   lvlGame: PropTypes.number,
   fightTurns: PropTypes.number,
 };
@@ -227,7 +251,7 @@ Enemy.defaultProps = {
     debuff: { vulnerable: 0, weak: 0, poison: 0 },
   },
   enemyLifeChange: 0,
-  enemyDisplayedActions: "",
+  enemyDisplayedActions: {},
   lvlGame: 0,
   fightTurns: 1,
 };
