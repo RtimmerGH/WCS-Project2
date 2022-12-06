@@ -164,3 +164,13 @@
 .enraged{
   filter: drop-shadow(0 0 0.75rem red);
 }
+
+.fading-boss { 
+  animation: fadeBackground 3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeBackground {
+  from { opacity: 100; }
+  to { opacity: 0; }
+}

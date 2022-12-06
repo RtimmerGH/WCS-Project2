@@ -32,6 +32,7 @@ export default function Game() {
   const [prevPlayerLife, setPrevPlayerLife] = useState(100);
   const [prevEnemyLife, setPrevEnemyLife] = useState(200);
   const [item, setItem] = useState({});
+  const [fadingBoss, setFadingBoss] = useState(false);
   // Objet représentant le joueur test
   const [playerStats, setPlayerStats] = useState({
     currentLife: 100,
@@ -614,8 +615,14 @@ export default function Game() {
 
   // victoire et level up
   useEffect(() => {
-    if (enemyStats.currentLife < 1) {
+    async function bossFading() {
+      await delay(3000);
+      setFadingBoss(false);
       setLvlGame((prev) => prev + 1);
+    }
+    if (enemyStats.currentLife < 1) {
+      setFadingBoss(true);
+      bossFading();
     }
   }, [enemyStats.currentLife]);
   // Game Over
@@ -685,6 +692,7 @@ export default function Game() {
             enemyActionsResolution={enemyActionsResolution}
             lvlGame={lvlGame}
             fightTurns={fightTurns}
+            fadingBoss={fadingBoss}
           />
         </div>
       )}
