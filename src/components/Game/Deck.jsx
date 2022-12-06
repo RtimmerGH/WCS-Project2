@@ -19,6 +19,7 @@ export default function Deck({
   enemyActionsResolution,
   lvlGame,
   fightTurns,
+  fadingBoss,
 }) {
   // Les States
 
@@ -168,7 +169,9 @@ export default function Deck({
         <div
           className={`drag-drop-zone${
             enemyActionsResolution ? " enemy-attack" : ""
-          }${lvlGame === 5 && fightTurns > 11 ? " enraged" : ""}`}
+          }${lvlGame === 5 && fightTurns > 11 ? " enraged" : ""}${
+            fadingBoss ? " fading-boss" : ""
+          }`}
           onDrop={(e) => dropEnnemy(e)}
           onDragOver={(e) => allowDrop(e)}
         />
@@ -248,13 +251,16 @@ export default function Deck({
                   /* onDragEnd={drop} */
                   onTouchStart={() =>
                     cardEnergy <= playerStats.currentEnergy &&
+                    !fadingBoss &&
                     setCardManager({
                       index: item,
                       isPlayed: true,
                       actionDone: false,
                     })
                   }
-                  draggable={cardEnergy <= playerStats.currentEnergy}
+                  draggable={
+                    cardEnergy <= playerStats.currentEnergy && !fadingBoss
+                  }
                 >
                   <GameCard
                     key={champions[item].champion.id}
@@ -367,6 +373,7 @@ Deck.propTypes = {
   enemyActionsResolution: PropTypes.bool,
   lvlGame: PropTypes.number,
   fightTurns: PropTypes.number,
+  fadingBoss: PropTypes.bool,
 };
 
 Deck.defaultProps = {
@@ -433,4 +440,5 @@ Deck.defaultProps = {
   enemyActionsResolution: false,
   lvlGame: 0,
   fightTurns: 1,
+  fadingBoss: false,
 };
