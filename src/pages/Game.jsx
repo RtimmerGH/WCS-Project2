@@ -372,7 +372,7 @@ export default function Game() {
         text1: `40 `,
         icon1: GiBroadsword,
         class1: "GiBroadsword",
-        text2: ` 15 `,
+        text2: ` Vol de vie `,
         icon2: GiHealing,
         class2: "GiHealing",
       },
@@ -500,7 +500,6 @@ export default function Game() {
   // tour de l'ennemi
   // actions de début de tour enemy
   useEffect(() => {
-    // changes
     async function delayStartEnemyTurn() {
       await delay(300);
       const playerStatsCopy = playerStats;
@@ -512,7 +511,6 @@ export default function Game() {
       setEndPlayerTurn(false);
       setEnemyActionsResolution(true);
     }
-    // fin changes
     if (endPlayerTurn) {
       delayStartEnemyTurn();
     }
@@ -520,10 +518,8 @@ export default function Game() {
 
   // actions de enemy
   useLayoutEffect(() => {
-    // changes
     async function delayStartEnemyAction() {
       await delay(1000);
-      // changes
       const playerCopy = playerStats;
       const enemyCopy = enemyStats;
       /* Attack action */
@@ -588,11 +584,9 @@ export default function Game() {
       setEnemyStats(enemyCopy);
       setFightTurns((prev) => prev + 1);
       setTotalTurns((prev) => prev + 1);
-      // fin changes
       setEnemyActionsResolution(false);
       setStartPlayerTurn(true);
     }
-    // fin changes
     if (enemyActionsResolution && enemyStats.currentLife > 0) {
       delayStartEnemyAction();
     }
@@ -606,6 +600,7 @@ export default function Game() {
     }
   }, [playerStats.currentLife]);
 
+  // derniers dégats/heal subis par enemy
   useEffect(() => {
     if (lvlGame === 1 || lvlGame === 3 || lvlGame === 5) {
       setEnemyLifeChange(enemyStats.currentLife - prevEnemyLife);
@@ -631,7 +626,7 @@ export default function Game() {
       setLvlGame(7);
     }
   }, [playerStats.currentLife]);
-  // affichage changement de vie pour le joueur et l'ennemi
+
   return (
     <div className="Game-Arena">
       {(lvlGame === 0 || lvlGame === 2 || lvlGame === 4 || lvlGame === 6) && (
@@ -660,6 +655,7 @@ export default function Game() {
           setItem={setItem}
           modalRulesOpen={modalRulesOpen}
           setModalRulesOpen={setModalRulesOpen}
+          fadingBoss={fadingBoss}
         />
       )}
       {(lvlGame === 1 || lvlGame === 3 || lvlGame === 5) && deckJeu && (

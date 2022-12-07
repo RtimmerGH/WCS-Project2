@@ -77,22 +77,24 @@ export default function ModalFirstReward({
   };
 
   const validReward = () => {
-    setPlayerStats(modifyPlayer(playerStats));
-    setItem(selected);
-    setIdSelectedCard();
-    setStartPlayerTurn(false);
-    setEndPlayerTurn(false);
-    setEnemyActionsResolution(false);
-    setFightTurns(1);
-    setPlayerLifeChange(0);
-    setEnemyLifeChange(0);
-    setEnemyStats(enemyLvl3);
-    setIndexActionList(1);
-    setEnemyActions(actionEnemyLvl3[0]);
-    setEnemyActionList(actionEnemyLvl3);
-    setLvlGame(3);
-    setPrevPlayerLife(playerStats.currentLife);
-    setPrevEnemyLife(enemyLvl3.currentLife);
+    if (Object.keys(selected).length > 0) {
+      setPlayerStats(modifyPlayer(playerStats));
+      setItem(selected);
+      setIdSelectedCard();
+      setStartPlayerTurn(false);
+      setEndPlayerTurn(false);
+      setEnemyActionsResolution(false);
+      setFightTurns(1);
+      setPlayerLifeChange(0);
+      setEnemyLifeChange(0);
+      setEnemyStats(enemyLvl3);
+      setIndexActionList(1);
+      setEnemyActions(actionEnemyLvl3[0]);
+      setEnemyActionList(actionEnemyLvl3);
+      setLvlGame(3);
+      setPrevPlayerLife(playerStats.currentLife);
+      setPrevEnemyLife(enemyLvl3.currentLife);
+    }
   };
   return (
     <div className="Modale-reward">

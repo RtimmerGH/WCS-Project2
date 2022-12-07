@@ -20,6 +20,7 @@ export default function ModalSecondReward({
   actionEnemyLvl5,
   setPrevPlayerLife,
   setPrevEnemyLife,
+  fadingBoss,
 }) {
   const modifyPlayer = (player) => {
     const newPlayerStats = player;
@@ -39,20 +40,22 @@ export default function ModalSecondReward({
     return newPlayerStats;
   };
   const validReward = () => {
-    setPlayerStats(modifyPlayer(playerStats));
-    setStartPlayerTurn(false);
-    setEndPlayerTurn(false);
-    setEnemyActionsResolution(false);
-    setFightTurns(1);
-    setPlayerLifeChange(0);
-    setEnemyLifeChange(0);
-    setEnemyStats(enemyLvl5);
-    setIndexActionList(1);
-    setEnemyActions(actionEnemyLvl5[0]);
-    setEnemyActionList(actionEnemyLvl5);
-    setLvlGame(5);
-    setPrevPlayerLife(playerStats.currentLife);
-    setPrevEnemyLife(enemyLvl5.currentLife);
+    if (!fadingBoss) {
+      setPlayerStats(modifyPlayer(playerStats));
+      setStartPlayerTurn(false);
+      setEndPlayerTurn(false);
+      setEnemyActionsResolution(false);
+      setFightTurns(1);
+      setPlayerLifeChange(0);
+      setEnemyLifeChange(0);
+      setEnemyStats(enemyLvl5);
+      setIndexActionList(1);
+      setEnemyActions(actionEnemyLvl5[0]);
+      setEnemyActionList(actionEnemyLvl5);
+      setLvlGame(5);
+      setPrevPlayerLife(playerStats.currentLife);
+      setPrevEnemyLife(enemyLvl5.currentLife);
+    }
   };
 
   return (
@@ -64,7 +67,7 @@ export default function ModalSecondReward({
         <img src={lvlUp} alt="lvlup_pic" />
         <h3>+50 MAX PV</h3>
       </div>
-      <h3>+1 ENERGIE</h3>
+      <h3>+1 ENERGY</h3>
 
       <button
         type="button"
@@ -223,6 +226,7 @@ ModalSecondReward.propTypes = {
   setPlayerStats: PropTypes.func,
   setPrevPlayerLife: PropTypes.func,
   setPrevEnemyLife: PropTypes.func,
+  fadingBoss: PropTypes.bool,
 };
 ModalSecondReward.defaultProps = {
   reward: {
@@ -367,4 +371,5 @@ ModalSecondReward.defaultProps = {
   setPlayerStats: () => {},
   setPrevPlayerLife: () => {},
   setPrevEnemyLife: () => {},
+  fadingBoss: false,
 };
