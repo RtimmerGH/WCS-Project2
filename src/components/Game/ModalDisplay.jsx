@@ -32,6 +32,7 @@ export default function ModalDisplay({
   setItem,
   modalRulesOpen,
   setModalRulesOpen,
+  fadingBoss,
 }) {
   const [startGame, setStartGame] = useState(0);
   const deckDepart = [];
@@ -98,6 +99,7 @@ export default function ModalDisplay({
             actionEnemyLvl5={actionEnemyLvl5}
             setPrevPlayerLife={setPrevPlayerLife}
             setPrevEnemyLife={setPrevEnemyLife}
+            fadingBoss={fadingBoss}
           />
         </div>
       )}
@@ -342,6 +344,7 @@ ModalDisplay.propTypes = {
   setItem: PropTypes.func,
   modalRulesOpen: PropTypes.bool,
   setModalRulesOpen: PropTypes.func,
+  fadingBoss: PropTypes.bool,
 };
 
 ModalDisplay.defaultProps = {
@@ -574,4 +577,5 @@ ModalDisplay.defaultProps = {
   setItem: () => {},
   modalRulesOpen: true,
   setModalRulesOpen: () => {},
+  fadingBoss: false,
 };
