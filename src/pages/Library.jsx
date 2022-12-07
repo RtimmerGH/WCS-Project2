@@ -189,7 +189,7 @@ export default function Library() {
               type="button"
               onClick={() => setManaMenuHover(!manaMenuHover)}
             >
-              {!champMana ? "MANA" : champMana}
+              {!champMana ? "ENERGY" : champMana}
             </button>
           </div>
           <div
