@@ -20,7 +20,7 @@ function GameCard({
   const [physAttack, setPhysAttack] = useState(0);
   const [block, setBlock] = useState(0);
   const [poison, setPoison] = useState(0);
-  const [doublePoison, setDoublePoison] = useState(false);
+  const [doublePoison, setDoublePoison] = useState(0);
   const [dodge, setDodge] = useState(0);
   const [playerAttackBuff, setPlayerAttackBuff] = useState(0);
   const [playerBlockBuff, setPlayerBlockBuff] = useState(0);
@@ -91,7 +91,10 @@ function GameCard({
               4 * (parseInt(manaCost(champ.info.difficulty), 10) + 1) +
               parseInt(manaCost(champ.info.difficulty), 10)
             ).toString()} Poison`
-          : "double le Poison";
+          : `Poison de la cible +${(
+              10 *
+              (parseInt(manaCost(champ.info.difficulty), 10) + 1)
+            ).toString()}%`;
       default:
         return "TBD";
     }
@@ -174,7 +177,12 @@ function GameCard({
             4 * (parseInt(manaCost(champ.info.difficulty), 10) + 1) +
               parseInt(manaCost(champ.info.difficulty), 10)
         );
-        setDoublePoison(champ.tags.length === 1 && true);
+
+        // setDoublePoison(champ.tags.length === 1 && true);
+        setDoublePoison(
+          champ.tags.length === 1 &&
+            1 + (10 * (parseInt(manaCost(champ.info.difficulty), 10) + 1)) / 100
+        );
         break;
       default:
         return "TBD";
@@ -283,8 +291,10 @@ function GameCard({
         enemyCopy.debuff.poison += poison + playerCopy.fullGameBuff.poisonBuff;
       }
       /* double poison action */
-      if (doublePoison) {
-        enemyCopy.debuff.poison *= 2;
+      if (doublePoison > 0) {
+        enemyCopy.debuff.poison = Math.round(
+          enemyCopy.debuff.poison * doublePoison
+        );
       }
       /* dodge action */
       if (dodge > 0) {
