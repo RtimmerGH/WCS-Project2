@@ -164,6 +164,11 @@
 .enraged{
   filter: drop-shadow(0 0 0.75rem red);
 }
+.death{
+  filter: drop-shadow(0 0 1rem rgb(155, 2, 2));
+  background-size: 35%;
+  background-position: top;
+}
 
 .fading-boss { 
   animation: fadeBackground 3s;

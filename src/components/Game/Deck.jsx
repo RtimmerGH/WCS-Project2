@@ -170,8 +170,8 @@ export default function Deck({
           className={`drag-drop-zone${
             enemyActionsResolution ? " enemy-attack" : ""
           }${lvlGame === 5 && fightTurns > 11 ? " enraged" : ""}${
-            fadingBoss ? " fading-boss" : ""
-          }`}
+            lvlGame === 5 && fightTurns > 19 ? " death" : ""
+          }${fadingBoss ? " fading-boss" : ""}`}
           onDrop={(e) => dropEnnemy(e)}
           onDragOver={(e) => allowDrop(e)}
         />

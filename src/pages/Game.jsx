@@ -460,6 +460,9 @@ export default function Game() {
     if (lvlGame === 5 && fightTurns === 11) {
       enemyCopy.fullCombatBuff.attackBuff += 50;
     }
+    if (lvlGame === 5 && fightTurns === 19) {
+      enemyCopy.fullCombatBuff.attackBuff += 1000;
+    }
     return enemyCopy;
   };
   const endPlayerTurnActionsForPlayer = (player) => {
