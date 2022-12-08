@@ -32,7 +32,7 @@ export default function Enemy({
       case 3:
         return "Tous les 3 tours l'Herald gagne 1 point de dégat";
       case 5:
-        return "Tous les 3 tours Nashor gagne +2 dégats et +2 résistance Physique, Magique et Poison / Tour 12: Enrage";
+        return "Tous les 3 tours Nashor gagne +2 dégats et +2 résistance Physique, Magique et Poison / Tour 12: Enrage / Tour 20: ???";
       default:
         return "";
     }
@@ -64,6 +64,7 @@ export default function Enemy({
           <h3>
             {enemyName(lvlGame)}
             {lvlGame === 5 && fightTurns > 11 && ` enragé`}
+            {lvlGame === 5 && fightTurns > 19 && ` à mort`}
           </h3>
         </div>
         <div

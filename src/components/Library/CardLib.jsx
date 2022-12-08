@@ -71,7 +71,10 @@ function CardLib({
               4 * (parseInt(manaCost(champ.info.difficulty), 10) + 1) +
               parseInt(manaCost(champ.info.difficulty), 10)
             ).toString()} Poison`
-          : "double le Poison";
+          : `Poison de la cible +${(
+              10 *
+              (parseInt(manaCost(champ.info.difficulty), 10) + 1)
+            ).toString()}%`;
       default:
         return "TBD";
     }
